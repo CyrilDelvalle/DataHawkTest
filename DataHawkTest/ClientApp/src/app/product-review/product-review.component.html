@@ -1,0 +1,29 @@
+<h1 id="tableLabel">Customer Reviews</h1>
+
+<p>List of {{ customerReviews.length }} reviews from Amazon for ASIN : <em>{{customerReviews[0].amazonASIN }}</em></p>
+
+<p *ngIf="!customerReviews"><em>Loading...</em></p>
+
+<table class='table table-striped' aria-labelledby="tableLabel" *ngIf="customerReviews">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Author</th>
+      <th>Title</th>
+      <th>Rate</th>
+      <th>Body</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let review of customerReviews">
+      <td>{{review.id}}</td>
+      <td>{{review.author}}</td>
+      <td>{{review.title}}</td>
+      <td>{{review.rate}}</td>
+      <td>{{review.body}}</td>F
+      <td>{{review.date}}</td>
+    </tr>
+  </tbody>
+</table>
